@@ -18,7 +18,7 @@ public class NumberUtility {
         if (numbers==null||numbers.isEmpty()){
             return 0;
         }
-        return numbers.stream().filter(value->value%2==0).count();
+        return numbers.stream().filter(num->num%2==0).count();
     }
 
     /**
@@ -29,7 +29,7 @@ public class NumberUtility {
         if (numbers==null||numbers.isEmpty()){
             return new ArrayList<>();
         }
-        return numbers.stream().filter(value->value%2==0&&value%3==0).collect(Collectors.toList());
+        return numbers.stream().filter(num->num%2==0&&num%3==0).collect(Collectors.toList());
     }
 
     /**
@@ -40,6 +40,6 @@ public class NumberUtility {
         if (numbers==null||numbers.isEmpty()){
             return 0;
         }
-        return numbers.stream().filter(a->a%2!=0).reduce((a,b)->a>b?a:b).orElse(0);
+        return numbers.stream().filter(num->num%2!=0).reduce((num1,num2)->num1>num2?num1:num2).orElse(0);
     }
 }
